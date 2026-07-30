@@ -1,6 +1,7 @@
 import pgzrun
 import random
 from pgzero.actor import Actor
+from pgzero.keyboard import keyboard
 
 
 
@@ -10,7 +11,29 @@ def draw():
     luigi.draw()
 
 def update():
-    pass
+    # Mario section
+    if keyboard.right:
+        mario.x += 5
+        mario.image = "mario_right"
+    if keyboard.left:
+        mario.x -= 5
+        mario.image = "mario_left"
+    if keyboard.up:
+        mario.y -= 5
+    if keyboard.down:
+        mario.y += 5
+    
+    # Luigi section
+    if keyboard.s:
+        luigi.x += 5
+        luigi.image = "luigi_right"
+    if keyboard.a:
+        luigi.x -= 5
+        luigi.image = "luigi_left"
+    if keyboard.w:
+        luigi.y -= 5
+    if keyboard.z:
+        luigi.y += 5
 
 
 WIDTH = 1280
